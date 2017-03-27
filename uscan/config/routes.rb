@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'search/contact' , to: "search#contact", as: "contact"
+  
+  resources :searchs
   
   root 'welcome#index'
 
