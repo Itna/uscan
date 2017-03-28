@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
   get 'search/contact' , to: "search#contact", as: "contact"
+  get 'search/index' , to: "search#index", as: "index"
   
   resources :searchs
   

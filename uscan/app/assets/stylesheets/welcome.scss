@@ -2,8 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
+body {
     background-image: url(/assets/marvel.jpg);
     background-size: cover;
-
 }
+
+div.button_holder {
+  position: absolute;
+  top: 75%;
+  left: 38%;
+}
+
+div.button2 {
+  position: absolute;
+  top: 0%;
+  left: 300%;
+  float: left;
+}
+

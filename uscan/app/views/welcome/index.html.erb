@@ -1,6 +1,11 @@
 
+<div class='button_holder'>
+<%= button_to "Contact Us", { :action => "contact", :controller =>"search"}, :class => "button", :method => :get %>
 
-<%= button_to "Contact Us", { :action => "contact", :controller=>"search"}, :method => :get %>
+<div class='button2'>
+    <%= button_to "Search",{ :action => "index", :controller =>"search"}, :class => "button", :method => :get %>
+</div>
+</div>
 
 
 
