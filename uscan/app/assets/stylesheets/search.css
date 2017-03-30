@@ -11,6 +11,18 @@
     background-size: cover;
 }
 
+#home-search-btn{
+  position: absolute;
+  top: 75%;
+  left: 38%;
+}
+
+#home-contact-btn{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+}
+
 
 
 
