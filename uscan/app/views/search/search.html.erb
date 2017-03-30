@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="Alex G, Billy The Kid, Jacob, Ryan, John" content="">
 
-    <title> Usan - Find the College for YOU</title>
+    <title>Simple Sidebar - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
@@ -34,12 +34,21 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        Uscan
-                    </a>
+                
+                
+                 
+                
+                
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                   
+                       <div class="row">
+                    <%= button_to "Back to Home",{ :action => "index", :controller =>"welcome"}, :class => "btn btn-default", :method => :get %>
+                    </div>
+                    
+                    
+                    
+                    
                 </li>
                 <li>
                     <a href="#">Shortcuts</a>
@@ -94,6 +103,15 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+
+<div class="row">
+    <div class="col-sm-offset-5 col-sm-2 text-center">
+<%= button_to "Contact Us", { :action => "contact", :controller =>"contact"}, :class => "btn btn-default", :method => :get %>
+
+<%= button_to "Search",{ :action => "search", :controller =>"search"}, :class => "btn btn-default", :method => :get %>
+</div>
+
+
 
 </body>
 
