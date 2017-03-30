@@ -1,16 +1,14 @@
-    <!-- Bootstrap Core CSS -->
-    <link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
-
-
+<!-- Bootstrap Core CSS -->
+<link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
 <body id="welcome">
-
-<div class="row">
-    <div class="col-sm-offset-5 col-sm-2 text-center">
-<%= button_to "Contact Us", { :action => "contact", :controller =>"contact"}, :class => "btn btn-default", :method => :get %>
-
-<%= button_to "Search",{ :action => "search", :controller =>"search"}, :class => "btn btn-default", :method => :get %>
+    <div class="btn-group-welcome">
+        <%= button_to "Contact Us", { :action => "contact", :controller =>"contact"}, :class => "btn btn-primary", :method => :get %>
 </div>
-</div>
+<div class="btn-group">
+    <%= button_to "Search",{ :action => "search", :controller =>"search"}, :class => "btn btn-default", :method => :get %>
+    </div>
+
+
 
 
 </body>
