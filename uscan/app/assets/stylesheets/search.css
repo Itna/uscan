@@ -24,10 +24,7 @@ body {
   margin: 0;
 }
 
-body#welcome {
-    background-image: url(/assets/scan.png);
-    background-size: cover;
-}
+
 
 article,
 aside,
