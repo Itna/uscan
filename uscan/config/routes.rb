@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   get 'contact/index'
-
   get 'welcome/index'
-  get 'search/contact' , to: "search#contact", as: "contact"
-  get 'search/index' , to: "search#index", as: "index"
+  get 'contact/index' , to: "contacts#index", as: "contact"
+  get 'search/search' , to: "searchs#search", as: "search"
   
   resources :searchs
+  resources :contacts
   
   root 'welcome#index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
