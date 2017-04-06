@@ -7,15 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
     <meta name="description" content="">
-    <meta name="Alex G, Billy The Kid, Jacob, Ryan, John" content="">
+    <meta name="Alex G, Billy The Kid, Jacob, Ryan, John" content="stuff">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Uscan</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="uscan/app/assets/stylesheets/simple-sidebar.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,71 +25,29 @@
 </head>
 
 <body>
-
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                   
-               
-                   <div class="row">
-                    <%= link_to image_tag("/assets/logo.png"),{ :action => "index", :controller =>"welcome"}, :id => "homebtn", :method => :get %>
-                    </div>
-                
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
-                <li>
-                    <a href="#">Overview</a>
-                </li>
-                <li>
-                    <a href="#">Events</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <div class="container-fluid">
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand"><a href="https://uscan-alxgnz.c9users.io/welcome/index">
+<img src="/assets/logo.png" style="max-width:180px; align: middle; display: block; margin: auto;" >
+</a></li>
+            <li><a href="#">Another link</a></li>
+            <li><a href="#">Next link</a></li>
+            <li><a href="#">Last link</a></li>
+        </ul>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="page-content">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Uscan Map</h1>
-                        <a href="#menu-toggle" class="btn btn-default " id="menu-toggle" background-image="/assets/logo.png">settings</a>
+                    <div class="col-md-12">
+                        <!-- content of page -->
                     </div>
                 </div>
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
-
     </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+</div>
 
 
 
