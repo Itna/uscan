@@ -23,7 +23,10 @@
   left: 50%;
 }
 
-
+.logo-bg{
+  background-color: #EBEBEB;
+  box-shadow: 10px 0px 4px #666666;
+}
 
 
 
