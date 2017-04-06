@@ -6,10 +6,20 @@ class FormsController < ApplicationController
     def new
     end
     
+    def show
+        @form = Form.find(params[:id])
+    end
     
     def create
-        render plain: params[:forms].inspect
+        @form = Form.new(form_params)
+        @form.save
+        redirect_to @form
     end
-
     
+    
+end
+
+private 
+def form_params
+    params.require(:forms).permit(:first_name, :last_name, :email, :message)
 end
