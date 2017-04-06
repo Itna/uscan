@@ -2,7 +2,7 @@
 <link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
 <body id="welcome">
     <div  id="home-contact-btn">
-            <%= button_to "Contact Us", { :action => "contact", :controller =>"contact"}, :class => "btn btn-success ", :method => :get %>
+        <%= link_to 'Contact', controller: 'form' %>
     </div>
     <div id="home-search-btn">
         <%= button_to "Search",{ :action => "search", :controller =>"search"}, :class => "btn btn-success ", :method => :get %>
