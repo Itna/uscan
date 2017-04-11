@@ -45,8 +45,6 @@ body{
 
 
 
-
-
 /************************SIDEBAR CSS************************************/
 
 
@@ -86,7 +84,12 @@ body{
 
 
 @media (max-width:767px) {
-
+    
+    #googleMap{
+      left: 0px;
+    }
+  
+  
     #wrapper {
       padding-left: 0;
     }
