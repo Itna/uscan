@@ -24,17 +24,22 @@
     <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Mono" rel="stylesheet">
 </head>
 
-<body>
+<body onload="initialize()" style="margin:0px; padding:0px;">
 <div id="wrapper">
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand"><div class="logo-bg"><a href="https://uscan-alxgnz.c9users.io/welcome/index">
 <img src="/assets/logo.png" style="max-width:200px; align: middle; display: block; margin: auto; padding: 5px;" >
-</a></div></li>
-            <li>Tuition</li>
-            <li>Gradution Rate</li>
-            <li>Acceptence Rate</li>
-            <li>Distance</li>
+</a></div></li><br>
+            <li><img src="/assets/tuit.png">   Tuition <input class="form-check-input" type="checkbox"> </li>
+            <br>
+            <li><img src="/assets/grad.png">   Gradution Rate <input class="form-check-input" type="checkbox"> </li>
+            <br>
+            <li><img src="/assets/accept.png">   Acceptence Rate <input class="form-check-input" type="checkbox"> </li>
+            <br>
+            <li><img src="/assets/dist.png">   Distance <input class="form-check-input" type="checkbox"> </li>
+            <br>
+            <li><%= button_to "Update Scan",{ :action => "search", :controller =>"search"}, :class => "btn btn-success ", :method => :get %></li>
         </ul>
     </div>
     <div id="page-content-wrapper">
@@ -43,6 +48,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!-- content of page -->
+                         <div id="googleMap" style="width: 100vw; height: 100vh; position: fixed; left: -27px; overflow: hidden;"></div>
                     </div>
                 </div>
             </div>
@@ -52,7 +58,17 @@
 
 
 
+<script>
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(37.09024, -85),
+    zoom:5,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeYQKn0PrJNPBkpbGe7ihFbdOXSit4Oww&callback=myMap"></script>
 
 </body>
 

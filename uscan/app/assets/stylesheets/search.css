@@ -8,7 +8,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto+Mono');
 
-
+body, html{
+  overflow: hidden;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 
 #welcome {
     background-image: url(/assets/scan.png);
@@ -32,20 +37,37 @@
   box-shadow: 0px 3px 5px #222;
 }
 
+#contact{
+   background-color: #444;
+   text-align: center;
+   color: white;
+   font-family: Roboto Mono;
+  
+}
+
+#googleMaps{
+  height: 900px;
+  width: auto;
+  
+}
+
+
+
 
 
 /************************SIDEBAR CSS************************************/
 
 
+
 #wrapper {
-  padding-left: 250px;
+  padding-left: 350px;
   transition: all 0.4s ease 0s;
 }
 
 #sidebar-wrapper {
-  margin-left: -240px;
-  left: 240px;
-  width: 240px;
+  margin-left: -340px;
+  left: 340px;
+  width: 550px;
   background: #606060;
   position: fixed;
   height: 100%;
@@ -61,11 +83,13 @@
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 240px;
+  width: 550px;
   list-style: none;
   margin: 0;
   padding: 0;
   font-family: 'Architects Daughter', cursive;
+  font-size: 35px;
+  color: white;
   text-align: center;
 }
 
@@ -82,12 +106,12 @@
 
     #wrapper.active {
       position: relative;
-      left: 240px;
+      left: 340px;
     }
 
     #wrapper.active #sidebar-wrapper {
-      left: 240px;
-      width: 240px;
+      left: 340px;
+      width: 340px;
       transition: all 0.4s ease 0s;
     }
 

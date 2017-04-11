@@ -25,6 +25,7 @@ if (typeof jQuery === 'undefined') {
  * ======================================================================== */
 
 
+
 +function ($) {
   'use strict';
 
@@ -59,6 +60,11 @@ if (typeof jQuery === 'undefined') {
     setTimeout(callback, duration)
     return this
   }
+
+
+
+
+
 
   $(function () {
     $.support.transition = transitionEnd()
@@ -2375,3 +2381,5 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+
+
