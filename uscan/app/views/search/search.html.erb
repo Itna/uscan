@@ -70,15 +70,23 @@ var mapProp= {
     center:new google.maps.LatLng(38, -90),
     zoom:5,
 };
+
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
 
 //this is how to add a marker 
 var marker = new google.maps.Marker({
-    position :new google.maps.LatLng(38,-90),
+    position :new google.maps.LatLng(35.227085,-80.843124),
+    url: 'http://www.uncc.edu/',
     map : map
 })
 
-}
+google.maps.event.addListener(marker, 'click', function() {
+      window.location.href = marker.url;
+    });
+
+    
+}//end of function 
 
 
 

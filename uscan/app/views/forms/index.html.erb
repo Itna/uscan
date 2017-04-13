@@ -1,9 +1,9 @@
 <head><link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet"></head>
 <div id="contact">
 
-<h1>Contact Us Page</h1>
+<h1>Comment Page</h1>
 
-<%= link_to 'New_Form', new_form_path %>
+<%= link_to 'Add A Comment', new_form_path %>
 
 <table>
   <tr>
@@ -16,6 +16,11 @@
       <td><%= form.first_name %></td>
       <td><%= form.message %></td>
       <td><%= link_to 'Show', form_path(form) %></td>
+      <td><%= link_to 'Edit', edit_form_path(form) %></td>
+      <td><%= link_to 'Destroy', 
+                                form_path(form),
+                                method: :delete,
+                                data: { confirm: 'Are you sure?' }  %></td>
     </tr>
   <% end %>
 </table>

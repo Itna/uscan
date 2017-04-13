@@ -5,6 +5,7 @@ class FormsController < ApplicationController
     end
     
     def new
+        @form = Form.new
     end
     
     def show
@@ -19,9 +20,26 @@ class FormsController < ApplicationController
             render 'new'
         end
     end
+    
+    def edit
+        @form = Form.find(params[:id])
+    end
+   
+  def update
+      @form = Form.find(params[:id])
+      if @form.update(form_params)
+          redirect_to @form
+      else
+          render 'edit'
+      end
+  end
+   
+   def destroy
+       @form = Form.find(params[:id])
+       @form.destroy
        
-    
-    
+       redirect_to forms_path
+   end
 end
 
 private 

@@ -44,15 +44,13 @@ body{
   
 }
 
-#contact.input{
-  color: black;
-}
+
 
 #range1 #range2 #range3{
   font-family: Roboto Mono;
 }
 
-input[type=text]{
+input[type=text] textarea button{
   color: black;
 }
 

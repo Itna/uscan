@@ -1,15 +1,12 @@
-<head><link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet"></head>
-<div id="contact">
-
-<h1>Comment Page</h1>
-
-<%= form_for :forms, url: forms_path do |f| %>
-  
+<h1>Editing article</h1>
+ 
+<%= form_for :form, url: form_path(@form), method: :patch do |f| %>
+ 
   <% if @form.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@form.errors.count, "error") %> prohibited
-        this comment from being saved:
+        this form from being saved:
       </h2>
       <ul>
         <% @form.errors.full_messages.each do |msg| %>
@@ -18,21 +15,21 @@
       </ul>
     </div>
   <% end %>
-  
+ 
   <p>
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name %>
   </p>
-    <p>
+  
+  <p>
     <%= f.label :last_name %><br>
     <%= f.text_field :last_name %>
   </p>
- 
-   <p>
+  
+  <p>
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </p>
- 
  
   <p>
     <%= f.label :message %><br>
@@ -42,7 +39,7 @@
   <p>
     <%= f.submit %>
   </p>
+ 
 <% end %>
-
-
-<%= link_to 'Back', forms_path %>
+ 
+<%= link_to 'Back', form_path %>
