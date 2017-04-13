@@ -1,6 +1,7 @@
 class FormsController < ApplicationController
     
     def index
+        @form = Form.all
     end
     
     def new
@@ -15,6 +16,7 @@ class FormsController < ApplicationController
         @form.save
         redirect_to @form
     end
+       
     
     
 end

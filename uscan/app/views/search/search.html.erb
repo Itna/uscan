@@ -27,18 +27,36 @@
 <body>
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand"><div class="logo-bg"><a href="https://uscan-alxgnz.c9users.io/welcome/index">
-<img src="/assets/logo.png" style="max-width:200px; align: middle; display: block; margin: auto; padding: 5px;" >
-</a></div></li><br>
-            <li><img src="/assets/tuit.png">   Tuition <input class="form-check-input" type="checkbox"> </li>
-            <br>
-            <li><img src="/assets/grad.png">   Gradution Rate <input class="form-check-input" type="checkbox"> </li>
-            <br>
-            <li><img src="/assets/accept.png">   Acceptence Rate <input class="form-check-input" type="checkbox"> </li>
-            <br>
-            <li><img src="/assets/dist.png">   Distance <input class="form-check-input" type="checkbox"> </li>
-            <br>
-            <li><%= button_to "Update Scan",{ :action => "search", :controller =>"search"}, :class => "btn btn-success ", :method => :get %></li>
+            <li class="sidebar-brand">
+                <div class="logo-bg"><a href="https://uscan-alxgnz.c9users.io/welcome/index">
+                <img src="/assets/logo.png" style="max-width:200px; align: middle; display: block; margin: auto; padding: 5px;" ></a></div>
+            </li>
+            <li>
+                <br>
+                <img src="/assets/tuit.png">   Tuition <input class="form-check-input" type="checkbox"> 
+                <br>$<span id="range1">1000</span>
+                <br><input type="range" min="1000" max="100000" value="1000" step="100" onchange="showValue(this.value)" class="slider" />
+            </li>
+            <li>
+                <br>
+                <img src="/assets/grad.png">   Gradution Rate <input class="form-check-input" type="checkbox"> 
+                <br><span id="range2">0</span>%
+                <br><input type="range" min="0" max="100" value="0" onchange="showValue(this.value)" class="slider" />
+            </li>
+            <li>
+                <br>
+                <img src="/assets/accept.png">   Acceptence Rate <input class="form-check-input" type="checkbox"> 
+                <br><span id="range3">0</span>%
+                <br><input type="range" min="0" max="100" value="0"  onchange="showValue(this.value)" class="slider" />
+            </li>
+            <li>
+                <br>
+                <img src="/assets/dist.png">   Distance <input class="form-check-input" type="checkbox"> 
+            </li>
+            <br><br>
+            <li>
+                <%= button_to "Update Scan",{ :action => "search", :controller =>"search"}, :class => "btn btn-success ", :method => :get %>
+            </li>
         </ul>
     </div>
     
@@ -53,6 +71,22 @@ var mapProp= {
     zoom:5,
 };
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+//this is how to add a marker 
+var marker = new google.maps.Marker({
+    position :new google.maps.LatLng(38,-90),
+    map : map
+})
+
+}
+
+
+
+function showValue(newValue)
+{
+	document.getElementById("range1").innerHTML=newValue;
+	document.getElementById("range2").innerHTML=newValue;
+	document.getElementById("range3").innerHTML=newValue;
 }
 </script>
 

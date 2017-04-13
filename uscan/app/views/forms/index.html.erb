@@ -3,29 +3,21 @@
 
 <h1>Contact Us Page</h1>
 
-<%= form_for :forms, url: forms_path do |f| %>
-  <p>
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </p>
-    <p>
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </p>
+<%= link_to 'New_Form', new_form_path %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Message</th>
+  </tr>
  
-   <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
- 
- 
-  <p>
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-</div>
+  <% @form.each do |form| %>
+    <tr>
+      <td><%= form.first_name %></td>
+      <td><%= form.message %></td>
+      <td><%= link_to 'Show', form_path(form) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', forms_path %>

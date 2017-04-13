@@ -10,7 +10,9 @@
 
 body{
   overflow: hidden;
+  font-family: Roboto Mono;
 }
+
 
 #welcome {
     background-image: url(/assets/scan.png);
@@ -42,6 +44,110 @@ body{
   
 }
 
+#contact.input{
+  color: black;
+}
+
+#range1 #range2 #range3{
+  font-family: Roboto Mono;
+}
+
+input[type=text]{
+  color: black;
+}
+
+
+/************************SLIDER CSS************************************/
+.slider{
+  position: relative;
+  left: 25px;
+}
+
+input[type=range].slider {
+  -webkit-appearance: none;
+  width: 80%;
+  margin: 8.6px 0;
+}
+input[type=range].slider:focus {
+  outline: none;
+}
+input[type=range].slider::-webkit-slider-runnable-track {
+  width: 80%;
+  height: 5.8px;
+  cursor: pointer;
+  box-shadow: 1.4px 1.4px 3.6px rgba(0, 0, 0, 0.37), 0px 0px 1.4px rgba(13, 13, 13, 0.37);
+  background: rgba(0, 0, 0, 0.13);
+  border-radius: 25px;
+  border: 3.3px solid rgba(0, 0, 0, 0);
+}
+input[type=range].slider::-webkit-slider-thumb {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 23px;
+  width: 16px;
+  border-radius: 4px;
+  background: #449d44;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11.9px;
+}
+input[type=range].slider:focus::-webkit-slider-runnable-track {
+  background: rgba(107, 107, 107, 0.13);
+}
+input[type=range].slider::-moz-range-track {
+  width: 80%;
+  height: 5.8px;
+  cursor: pointer;
+  box-shadow: 1.4px 1.4px 3.6px rgba(0, 0, 0, 0.37), 0px 0px 1.4px rgba(13, 13, 13, 0.37);
+  background: rgba(0, 0, 0, 0.13);
+  border-radius: 25px;
+  border: 3.3px solid rgba(0, 0, 0, 0);
+}
+input[type=range].slider::-moz-range-thumb {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 23px;
+  width: 16px;
+  border-radius: 4px;
+  background: #449d44;
+  cursor: pointer;
+}
+input[type=range].slider::-ms-track {
+  width: 80%;
+  height: 5.8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range].slider::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.13);
+  border: 3.3px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+  box-shadow: 1.4px 1.4px 3.6px rgba(0, 0, 0, 0.37), 0px 0px 1.4px rgba(13, 13, 13, 0.37);
+}
+input[type=range].slider::-ms-fill-upper {
+  background: rgba(0, 0, 0, 0.13);
+  border: 3.3px solid rgba(0, 0, 0, 0);
+  border-radius: 50px;
+  box-shadow: 1.4px 1.4px 3.6px rgba(0, 0, 0, 0.37), 0px 0px 1.4px rgba(13, 13, 13, 0.37);
+}
+input[type=range].slider::-ms-thumb {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
+  border: 0px solid rgba(0, 0, 0, 0);
+  height: 23px;
+  width: 16px;
+  border-radius: 4px;
+  background: #449d44;
+  cursor: pointer;
+  height: 5.8px;
+}
+input[type=range].slider:focus::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.13);
+}
+input[type=range].slider:focus::-ms-fill-upper {
+  background: rgba(107, 107, 107, 0.13);
+}
 
 
 
