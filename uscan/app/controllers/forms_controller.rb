@@ -13,8 +13,11 @@ class FormsController < ApplicationController
     
     def create
         @form = Form.new(form_params)
-        @form.save
-        redirect_to @form
+        if @form.save
+            redirect_to @form
+        else
+            render 'new'
+        end
     end
        
     
