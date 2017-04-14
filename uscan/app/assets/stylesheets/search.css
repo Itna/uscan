@@ -25,6 +25,18 @@ body{
   left: 38%;
 }
 
+#home-submit-btn{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+}
+
+#home-back-btn{
+  position: absolute;
+  top: 35%;
+  left: 46%;
+}
+
 #home-contact-btn{
   position: absolute;
   top: 75%;
@@ -41,17 +53,40 @@ body{
    text-align: center;
    color: white;
    font-family: Roboto Mono;
-  
 }
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+td {
+  color: white;
+  border: 0px solid #dddddd;
+}
+tr {
+  text-align: justify
+}
 
 
 #range1 #range2 #range3{
   font-family: Roboto Mono;
 }
 
-input[type=text] textarea button{
-  color: black;
+input[type=text]{
+  color: blue;
+}
+
+#form_message{
+  color: blue;
 }
 
 

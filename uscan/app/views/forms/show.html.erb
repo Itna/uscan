@@ -1,5 +1,9 @@
-<head><link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet"></head>
-<div id="contact">
+<html lang="en"> 
+<head>
+  <link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
+  </head>
+<body id="contact">
+<div>
 <p>
     
     <strong>First Name</strong>
@@ -23,6 +27,9 @@
     <strong>Message</strong>
     <%= @form.message %>
 </p>
-</div>
 
-<%= link_to 'Back', controller: 'forms' %>
+
+<%= button_to "Back",{ :action => "index", :controller =>"forms"}, :class => "btn btn-success ", :method => :get %>
+</div>
+</body>
+</html>

@@ -40,9 +40,9 @@ class FormsController < ApplicationController
        
        redirect_to forms_path
    end
-end
 
 private 
 def form_params
-    params.require(:forms).permit(:first_name, :last_name, :email, :message)
+    params.require(:form).permit(:first_name, :last_name, :email, :message)
+end
 end
