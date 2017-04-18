@@ -1,35 +1,32 @@
 <html lang="en"> 
 <head>
-  <link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
-  </head>
-<body id="contact">
-<div>
-<p>
-    
-    <strong>First Name</strong>
-    <%= @form.first_name %>
-</p>
-
-<p>
-    
-    <strong>Last Name</strong>
-    <%= @form.last_name %>
-</p>
-
-<p>
-    
-    <strong>Email</strong>
-    <%= @form.email %>
-</p>
-
-<p>
-    
-    <strong>Message</strong>
-    <%= @form.message %>
-</p>
-
-
-<%= button_to "Back",{ :action => "index", :controller =>"forms"}, :class => "btn btn-success ", :method => :get %>
-</div>
-</body>
+    <link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
+    </head>
+    <body id="comment">
+        <fieldset>
+        <div>
+            <p>
+                <strong>First Name</strong>
+                <%= @form.first_name %>
+                </p>
+                
+                <p>
+                <strong>Last Name</strong>
+                <%= @form.last_name %>
+                </p>
+                    
+                <p>
+                <strong>Email</strong>
+                <%= @form.email %>
+                </p>
+                        
+                <p>
+                <strong>Message</strong>
+                <%= @form.message %>
+                </p>
+                            
+    <%= button_to "Back",{ :action => "index", :controller =>"forms"}, :class => "btn btn-success ", :method => :get %>
+        </div>
+        </fieldset>
+    </body>
 </html>

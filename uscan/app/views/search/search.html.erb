@@ -25,6 +25,9 @@
 </head>
 
 <body>
+    <!-- Testing Shit -->
+
+  <!-- Done -->
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
@@ -35,19 +38,19 @@
                 <br>
                 <img src="/assets/tuit.png">   Tuition <input class="form-check-input" type="checkbox"> 
                 <br>$<span id="range1">1000</span>
-                <br><input type="range" min="1000" max="100000" value="1000" step="100" onchange="showValue(this.value)" class="slider" />
+                <br><input type="range" min="1000" max="100000" value="1000" step="100" onchange="showValue1(this.value)" class="slider" />
             </li>
             <li>
                 <br>
                 <img src="/assets/grad.png">   Gradution Rate <input class="form-check-input" type="checkbox"> 
                 <br><span id="range2">0</span>%
-                <br><input type="range" min="0" max="100" value="0" onchange="showValue(this.value)" class="slider" />
+                <br><input type="range" min="0" max="100" value="0" onchange="showValue2(this.value)" class="slider" />
             </li>
             <li>
                 <br>
                 <img src="/assets/accept.png">   Acceptence Rate <input class="form-check-input" type="checkbox"> 
                 <br><span id="range3">0</span>%
-                <br><input type="range" min="0" max="100" value="0"  onchange="showValue(this.value)" class="slider" />
+                <br><input type="range" min="0" max="100" value="0"  onchange="showValue3(this.value)" class="slider" />
             </li>
             <li>
                 <br>
@@ -55,7 +58,7 @@
             </li>
             <br><br>
             <li>
-                <%= button_to "Update Scan",{ :action => "search", :controller =>"search"}, :class => "btn btn-success ", :method => :get %>
+                <button onclick="store()" type="button" class="btn btn-success">Update Search</button>
             </li>
         </ul>
     </div>
@@ -73,6 +76,30 @@ var mapProp= {
 
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
+var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      '<div id="bodyContent">'+
+      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+      'sandstone rock formation in the southern part of the '+
+      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+      'south west of the nearest large town, Alice Springs; 450&#160;km '+
+      '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+      'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+      'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+      'Aboriginal people of the area. It has many springs, waterholes, '+
+      'rock caves and ancient paintings. Uluru is listed as a World '+
+      'Heritage Site.</p>'+
+      '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+      'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+      '(last visited June 22, 2009).</p>'+
+      '</div>'+
+      '</div>';
+
+var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
 
 //this is how to add a marker 
 var marker = new google.maps.Marker({
@@ -80,6 +107,10 @@ var marker = new google.maps.Marker({
     url: 'http://www.uncc.edu/',
     map : map
 })
+
+marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
 
 google.maps.event.addListener(marker, 'click', function() {
       window.location.href = marker.url;
@@ -90,12 +121,23 @@ google.maps.event.addListener(marker, 'click', function() {
 
 
 
-function showValue(newValue)
+function showValue1(newValue)
 {
 	document.getElementById("range1").innerHTML=newValue;
+}
+function showValue2(newValue)
+{
 	document.getElementById("range2").innerHTML=newValue;
+}
+function showValue3(newValue)
+{
 	document.getElementById("range3").innerHTML=newValue;
 }
+
+
+
+
+
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeYQKn0PrJNPBkpbGe7ihFbdOXSit4Oww&callback=myMap"></script>
@@ -103,3 +145,5 @@ function showValue(newValue)
 </body>
 
 </html>
+
+<!-- https://api.data.gov/ed/collegescorecard/v1/schools?api_key=0PGR8AfEJpwx1vrAndIR6OT9elbqm5RH5dU6pg0g&_fields=id,school.name,school.city,school.state,school.zip,location.lat,location.lon&_per_page=100&_zip=28208&_distance=50mi&school.degrees_awarded.highest=3    -->

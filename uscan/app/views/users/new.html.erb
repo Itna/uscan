@@ -1,0 +1,19 @@
+<link href="uscan/app/assets/stylesheets/search.css" rel="stylesheet">
+<body id="sign_in_page">
+  <fieldset id="fieldset_box2">
+    <div id="clearance" class="sign-up">
+  <h2><%= t(".title") %></h2>
+  <%= form_for @user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+    
+    <div>
+      <%= form.submit :class => "btn btn-success" %>
+    </div>
+
+    <div class="other-links">
+      <%= link_to t(".sign_in"), sign_in_path %>
+    </div>
+  <% end %>
+</div>
+</fieldset>
+</body>

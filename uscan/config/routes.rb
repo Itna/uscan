@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-
-  get 'welcome/index'
   
-
-
   get 'search/search' , to: "search#search", as: "search"
-  get 'welcome/index' , to: "weclome#index", as: "back"
+  get 'welcome/index' , to: "welcome#index", as: "back"
   
+  resources :welcome
   resources :searchs
   resources :forms
   
-  root 'welcome#index'
+  root :to => 'welcome#index'
+  
 end
