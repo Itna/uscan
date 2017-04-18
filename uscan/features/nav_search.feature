@@ -1,4 +1,4 @@
-Feature: Navigate to Search pages
+Feature: Navigate to search page
   As a user
   So that I can easily search for colleges and universities
   I want to be able to navigate to the Search page
