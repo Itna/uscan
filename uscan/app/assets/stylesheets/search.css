@@ -34,14 +34,6 @@ body{
   top: 75%;
   left: 50%;
 }
-#sign_in_as_box{
-  width: 275px;
-  height: 54px;
-  font-weight: 900;
-  background-color: rgba(0,0,0,.6);
-  position: relative;
-  z-index: 1;
-}
 
 /************************Sign_in_Shit************************************/
 #sign_in_page{
@@ -64,6 +56,16 @@ input[type=email]{
 }
 input[type=password]{
   color: blue;
+}
+#current_email{
+  left: 38%;
+}
+.navbar-center{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;  
 }
 
 /************************I Have No Idea what this belongs to************************************/
@@ -4472,6 +4474,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-collapse {
+  text-align: center;
   padding-right: 15px;
   padding-left: 15px;
   overflow-x: visible;
@@ -4564,7 +4567,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-width: 1px 0 0;
 }
 .navbar-brand {
-  float: left;
+  float: none;
   height: 50px;
   padding: 15px 15px;
   font-size: 18px;
@@ -4883,6 +4886,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse {
   background-color: #222;
   border-color: #080808;
+  text-align: center;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;

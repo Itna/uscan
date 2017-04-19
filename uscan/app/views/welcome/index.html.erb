@@ -17,7 +17,10 @@
           <div class="navbar-header">
             <%= link_to "U-Scan", root_path, class: "navbar-brand" %>
           </div>
-
+          <div class="navbar-brand navbar-center">
+          Signed in as: <%= current_user.email %>
+          </div>
+               
           <ul class="nav navbar-nav navbar-right">
             <% if signed_in? %>
               <li><%= link_to "Comment",{ :action => "index", :controller =>"forms"},  :method => :get %></li>
