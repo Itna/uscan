@@ -19,6 +19,7 @@ body{
     height: 100vh;
     background-size: cover;
     color: #39ff14;
+    font-family: Roboto Mono;
     
     
 }
@@ -1897,6 +1898,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  background-color: rgba(0,0,0,.6);
 }
 .row {
   margin-right: -15px;
