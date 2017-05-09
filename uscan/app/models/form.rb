@@ -1,3 +1,5 @@
+#This is for the comments it makes sure something is in the fields
+
 class Form < ApplicationRecord
     validates :first_name, presence: true
     validates :last_name, presence: true

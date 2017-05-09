@@ -1,3 +1,9 @@
+#Gathers the necessary parameters from the US Department of Education: College Scorecard API
+
+
+
+
+
 require 'httparty'
 require 'json'
 include Math

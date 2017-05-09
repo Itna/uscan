@@ -1,3 +1,7 @@
+
+#Form Controller has CRUD functionalities
+
+
 class FormsController < ApplicationController
     
     def index

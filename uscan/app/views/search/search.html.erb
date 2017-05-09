@@ -25,87 +25,54 @@
 </head>
 
 <body>
-    <!-- Testing Shit -->
 
-  <!-- Done -->
+<!-- Side Bar -->
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <div class="logo-bg"><a href="https://uscan-alxgnz.c9users.io/welcome/index">
-                <img src="/assets/logo.png" style="max-width:200px; align: middle; display: block; margin: auto; padding: 5px;" ></a></div>
+                <div class="logo-bg"><a href="https://uscan-alxgnz.c9users.io">
+                    <img src="/assets/logo.png" style="max-width:200px; align: middle; display: block; margin: auto; padding: 5px;" ></a></div>
             </li>
             <li>
                 <br>
-                <img src="/assets/tuit.png">   Tuition <input class="form-check-input" type="checkbox"> 
+                <img src="/assets/tuit.png">   Tuition <input class="form-check-input" type="checkbox" id='tuit_check'> 
                 <br>$<span id="range1">1000</span>
-                <br><input type="range" min="1000" max="100000" value="1000" step="100" onchange="showValue1(this.value)" class="slider" />
+                <br><input type="range" min="1000" max="100000" value="1000" step="100" onchange="showValue1(this.value)" class="slider" id="tuit_input" />
             </li>
             <li>
                 <br>
-                <img src="/assets/grad.png">   Gradution Rate <input class="form-check-input" type="checkbox"> 
+                <img src="/assets/grad.png">   Gradution Rate <input class="form-check-input" type="checkbox" id="grad_check"> 
                 <br><span id="range2">0</span>%
-                <br><input type="range" min="0" max="100" value="0" onchange="showValue2(this.value)" class="slider" />
+                <br><input type="range" min="0" max="100" value="0" onchange="showValue2(this.value)" class="slider" id="grad_input" />
             </li>
             <li>
                 <br>
-                <img src="/assets/accept.png">   Acceptence Rate <input class="form-check-input" type="checkbox"> 
+                <img src="/assets/accept.png">   Acceptence Rate <input class="form-check-input" type="checkbox" id="add_check"> 
                 <br><span id="range3">0</span>%
-                <br><input type="range" min="0" max="100" value="0"  onchange="showValue3(this.value)" class="slider" />
+                <br><input type="range" min="0" max="100" value="0"  onchange="showValue3(this.value)" class="slider" id="add_input"/>
             </li>
             <li>
                 <br>
-                <img src="/assets/dist.png">   Distance <input class="form-check-input" type="checkbox"> 
+                <img src="/assets/dist.png">   Distance <input class="form-check-input" type="checkbox" id="dist_check"> 
+                <br>
+                <br>
+                <div class="input-group" style='align: middle;'>
+                     <span class="input-group-addon" id="sizing-addon2">ZipCode</span>
+                      <input id='zip' type="text" class="form-control" placeholder="ex: 33016" aria-describedby="sizing-addon2" style='width: 80%'>
+                    </div>
+                <br>
+                <div class="input-group" style='align: middle;'>
+                     <span class="input-group-addon" id="sizing-addon2">Miles</span>
+                      <input id='miles' type="text" class="form-control" placeholder="ex: 500" aria-describedby="sizing-addon2" style='width: 80%'>
+                    </div>
             </li>
             <br><br>
             <li>
-                <button onclick="store()" type="button" class="btn btn-success">Update Search</button>
+                <button onclick="myMap()" type="button" class="btn btn-success">Update Search</button>
             </li>
         </ul>
     </div>
-    
-               
-                         <div id="googleMap" style="height: 100vh; position: relative; overflow: hidden; margin-left: 310px;"></div>
-              
-
-<script>
-function myMap() {
-var mapProp= {
-    center:new google.maps.LatLng(36, -90),
-    zoom:5,
-};
-
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-/*var contentString = '<h3>University of North Carolina at Charlotte</h3>'+
-                    'Charlotte, NC'+
-                    '<br><b>Acceptence Rate:</b> 54.53%'+
-                    '<br><b>Graduation Rate:</b> 64.09%'+
-                    '<br><b>In State Tuition:</b> $19,448'+
-                    '<br><b>Out of State Tuition:</b> $6,277'+
-                    '<br> <a href="http://www.uncc.edu/"><b>School Website</b></a>';
-
-var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
-
-//this is how to add a marker 
-var marker = new google.maps.Marker({
-    position :new google.maps.LatLng(35.227085,-80.843124),
-    map : map
-})
-
-marker.addListener('click', function() {
-    infowindow.open(map, marker);
-});
-
-*/
-
-    
-    
-    
-    
-}//end of function 
-</script>
+<!-- End of Side Bar -->
 
 
 
@@ -124,8 +91,127 @@ function showValue3(newValue)
 {
 	document.getElementById("range3").innerHTML=newValue;
 }
+function Get(yourUrl){
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET",yourUrl,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;          
+}
 
 </script>
+
+
+
+
+
+<!-- Google Map  -->
+<div id="googleMap" style="height: 100vh; position: relative; overflow: hidden; margin-left: 310px;"></div>
+<!-- Google Map -->
+
+<script>
+function myMap() {
+    
+miles = document.getElementById('miles').value 
+zip = document.getElementById('zip').value 
+grad_val = (document.getElementById('grad_input').value)/100 
+add_val = (document.getElementById('add_input').value)/100
+tuit_val = document.getElementById('tuit_input').value 
+
+
+
+url = 'https://api.data.gov/ed/collegescorecard/v1/schools.json?api_key=0PGR8AfEJpwx1vrAndIR6OT9elbqm5RH5dU6pg0g'+
+'&school.degrees_awarded.highest=3'+
+'&_fields=id,school.name,school.city,school.state,school.zip,location.lat,location.lon,2014.admissions.admission_rate.overall,'+
+'2014.cost.tuition.in_state,2014.cost.tuition.out_of_state,2014.completion.completion_rate_4yr_150nt,school.school_url&_per_page=100'
+
+distance = '&_zip='+zip+'&_distance='+miles+'mi'
+tuit = '&2014.cost.tuition.in_state__range=..'+tuit_val
+grad = '&2014.completion.completion_rate_4yr_150nt__range='+grad_val+'..'
+accept = '&2014.admissions.admission_rate.overall__range='+add_val+'..'
+
+
+
+if (document.getElementById('dist_check').checked) {
+            url += distance
+}
+if (document.getElementById('add_check').checked) {
+            url += accept
+}
+if (document.getElementById('grad_check').checked) {
+            url += grad
+}
+if (document.getElementById('tuit_check').checked) {
+            url += tuit
+}
+
+
+
+var json_obj = JSON.parse(Get(url));
+console.log(json_obj);
+
+    
+    
+    
+var mapProp= {
+    center:new google.maps.LatLng(36, -90),
+    zoom:5,
+    
+};
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+
+var contentString = [json_obj.results.length];
+var infowindow = [json_obj.results.length];
+var markers = [json_obj.results.length];
+var count = 0;
+
+while(count < json_obj.results.length){
+    
+
+
+ contentString[count] = '<h3>'+json_obj.results[count]["school.name"]+'</h3>'+
+                    json_obj.results[count]["school.city"] +', '+json_obj.results[count]["school.state"]+
+                    '<br><b>Acceptence Rate:</b> '+(json_obj.results[count]["2014.admissions.admission_rate.overall"]*100).toFixed(1)+'%'+
+                    '<br><b>Graduation Rate:</b>'+(json_obj.results[count]["2014.completion.completion_rate_4yr_150nt"]*100).toFixed(1)+'%'+
+                    '<br><b>In State Tuition:</b> '+json_obj.results[count]["2014.cost.tuition.in_state"]+
+                    '<br><b>Out of State Tuition:</b> '+json_obj.results[count]["2014.cost.tuition.out_of_state"]+
+                    '<br><a href="https://'+json_obj.results[count]["school.school_url"]+'">School Website</a>';
+
+  infowindow[count] = new google.maps.InfoWindow({
+    content: contentString[count]
+  });
+
+//this is how to add a marker 
+  markers[count] = new google.maps.Marker({
+    position :new google.maps.LatLng(json_obj.results[count]["location.lat"],json_obj.results[count]["location.lon"]),
+    map : map,
+});
+
+var addListener = function (count) {
+    google.maps.event.addListener(markers[count], 'click', function(){
+        infowindow[count].open(map, markers[count]);                 
+    });
+}
+addListener(count);
+
+
+count += 1;
+
+
+
+}//endloop   
+    
+    
+}//end of function 
+
+
+</script>
+
+
+
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeYQKn0PrJNPBkpbGe7ihFbdOXSit4Oww&callback=myMap"></script>
 
